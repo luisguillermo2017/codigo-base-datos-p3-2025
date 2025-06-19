@@ -1,17 +1,17 @@
 --Crear una base de datos
---test
 USE Master;
 GO
 DROP DATABASE IF EXISTS Venta_Vehiculos_P3_2025;
 GO
 
+--Crear una base de datos
 CREATE DATABASE Venta_Vehiculos_P3_2025;
 GO
 
 
 --Apuntar a la base de datos en la que deseas ejecutar los querys
 USE Venta_Vehiculos_P3_2025;
-
+GO
 --Crear la tabla Cliente
 CREATE TABLE Cliente (
     Id_Cliente INT IDENTITY(1,1) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE Cliente (
 );
 
 --Consultar todos los datos de mi tabla
---SELECT * FROM Cliente
+SELECT * FROM Cliente
 
 --Crear la tabla Sede
 CREATE TABLE Sede (
@@ -39,6 +39,10 @@ CREATE TABLE Sede (
     CONSTRAINT PK_Sede PRIMARY KEY (Id_Sede)
 );
 
+--Consultar todos los datos de mi tabla
+SELECT * FROM Sede
+
+
 --Crear la tabla Puesto
 CREATE TABLE Puesto (
     Id_Puesto TINYINT IDENTITY(1,1) NOT NULL,
@@ -49,6 +53,9 @@ CREATE TABLE Puesto (
     CONSTRAINT PK_Puesto PRIMARY KEY (Id_Puesto)
 );
 
+--Consultar todos los datos de mi tabla
+SELECT * FROM Puesto
+
 --Crear la tabla Tipo_Combinacion
 CREATE TABLE Tipo_Combinacion (
     Id_Tipo_Combinacion TINYINT IDENTITY(1,1) NOT NULL,
@@ -58,6 +65,10 @@ CREATE TABLE Tipo_Combinacion (
     CONSTRAINT PK_Tipo_Combinacion PRIMARY KEY (Id_Tipo_Combinacion)
 );
 
+--Consultar todos los datos de mi tabla
+SELECT * FROM Tipo_Combinacion
+
+
 --Crear la tabla Estilo
 CREATE TABLE Estilo (
     Id_Estilo TINYINT IDENTITY(1,1) NOT NULL,
@@ -66,6 +77,9 @@ CREATE TABLE Estilo (
     Estado BIT NOT NULL,
     CONSTRAINT PK_Estilo PRIMARY KEY (Id_Estilo)
 );
+
+--Consultar todos los datos de mi tabla
+SELECT * FROM Estilo
 
 --Crear la tabla Empleado
 CREATE TABLE Empleado (
@@ -84,6 +98,9 @@ CREATE TABLE Empleado (
     CONSTRAINT FK_Empleado_Puesto FOREIGN KEY (Id_Puesto) REFERENCES Puesto(Id_Puesto)
 );
 
+--Consultar todos los datos de mi tabla
+SELECT * FROM Empleado
+
 --Crear la tabla Vehiculo
 CREATE TABLE Vehiculo (
     Id_Vehiculo INT IDENTITY(1,1) NOT NULL,
@@ -95,8 +112,8 @@ CREATE TABLE Vehiculo (
     Id_Estilo TINYINT NOT NULL,
     Estado BIT NOT NULL,
     CONSTRAINT PK_Vehiculo PRIMARY KEY (Id_Vehiculo),
-    CONSTRAINT FK_Empleado_TipoCombinacion FOREIGN KEY (Id_Tipo_Combinacion) REFERENCES Tipo_Combinacion(Id_Tipo_Combinacion),
-    CONSTRAINT FK_Empleado_Estilo FOREIGN KEY (Id_Estilo) REFERENCES Estilo(Id_Estilo)
+    CONSTRAINT FK_Vehiculo_TipoCombinacion FOREIGN KEY (Id_Tipo_Combinacion) REFERENCES Tipo_Combinacion(Id_Tipo_Combinacion),
+    CONSTRAINT FK_Vehiculo_Estilo FOREIGN KEY (Id_Estilo) REFERENCES Estilo(Id_Estilo)
 );
 
 --Crear la tabla Factura
@@ -130,23 +147,23 @@ INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email,
 ('Mariana', 'Gomez', 'Zamora', '8999-9999', 'mariana@example.com', '2-5678-5678', '1985-02-15', 1),
 ('Carlos', 'Mora', 'Sanchez', '8777-7777', 'carlos@example.com', '3-3456-3456', '1992-06-25', 1),
 ('Ana', 'Vargas', 'Chaves', '8666-6666', 'ana@example.com', '4-7890-7890', '1998-12-10', 0),
-('Jorge', 'Alpï¿½zar', 'Mejï¿½a', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
+('Jorge', 'Alpízar', 'Mejía', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
 
 
 INSERT INTO Sede (Nombre, Descripcion, Telefono, Estado) VALUES
-('San Josï¿½', 'Sucursal principal en San Josï¿½ centro', '2222-2222', 1),
+('San José', 'Sucursal principal en San José centro', '2222-2222', 1),
 ('Alajuela', 'Sucursal ubicada en el centro de Alajuela', '2433-1122', 1),
 ('Heredia', 'Sucursal al norte de Heredia centro', '2266-3344', 1),
-('Cartago', 'Sucursal cercana a la Basï¿½lica', '2555-7788', 1),
-('Limï¿½n', 'Sucursal principal del Caribe', '2750-0000', 0);
+('Cartago', 'Sucursal cercana a la Basílica', '2555-7788', 1),
+('Limón', 'Sucursal principal del Caribe', '2750-0000', 0);
 
 
 INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
 ('Gerente', 'Responsable de toda la sucursal', 1),
-('Vendedor', 'Encargado de ventas y atenciï¿½n al cliente', 1),
-('Mecï¿½nico', 'Responsable del mantenimiento de vehï¿½culos', 1),
+('Vendedor', 'Encargado de ventas y atención al cliente', 1),
+('Mecánico', 'Responsable del mantenimiento de vehículos', 1),
 ('Asistente', 'Asistente administrativo general', 1),
-('Contador', 'Encargado del ï¿½rea financiera', 1);
+('Contador', 'Encargado del área financiera', 1);
 
 
 INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
@@ -158,27 +175,27 @@ INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
 
 
 INSERT INTO Tipo_Combinacion (Nombre, Descripcion, Estado) VALUES
-('Manual', 'Transmisiï¿½n manual', 1),
-('Automï¿½tica', 'Transmisiï¿½n automï¿½tica', 1),
-('Mixta', 'Transmisiï¿½n mixta (semi)', 1),
-('Elï¿½ctrico', 'Motor elï¿½ctrico sin marchas', 1),
-('CVT', 'Transmisiï¿½n continuamente variable', 1);
+('Manual', 'Transmisión manual', 1),
+('Automática', 'Transmisión automática', 1),
+('Mixta', 'Transmisión mixta (semi)', 1),
+('Eléctrico', 'Motor eléctrico sin marchas', 1),
+('CVT', 'Transmisión continuamente variable', 1);
 
 
 INSERT INTO Estilo (Nombre, Descripcion, Estado) VALUES
-('Sedï¿½n', 'Vehï¿½culo con carrocerï¿½a clï¿½sica de 4 puertas', 1),
-('SUV', 'Vehï¿½culo deportivo utilitario', 1),
+('Sedán', 'Vehículo con carrocería clásica de 4 puertas', 1),
+('SUV', 'Vehículo deportivo utilitario', 1),
 ('Hatchback', 'Compacto con maletera integrada', 1),
-('Pickup', 'Vehï¿½culo con cajï¿½n de carga', 1),
+('Pickup', 'Vehículo con cajón de carga', 1),
 ('Convertible', 'Techo removible para viajes al aire libre', 1);
 
 
 INSERT INTO Empleado (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email, Cedula, Id_Sede, Id_Puesto, Estado) VALUES
-('Oscar', 'Ramï¿½rez', 'Zï¿½ï¿½iga', '8888-0001', 'oscar@example.com', '1-9999-9999', 1, 1, 1),
+('Oscar', 'Ramírez', 'Zúñiga', '8888-0001', 'oscar@example.com', '1-9999-9999', 1, 1, 1),
 ('Paola', 'Herrera', 'Solano', '8888-0002', 'paola@example.com', '2-8888-8888', 2, 2, 1),
-('Roberto', 'Campos', 'Jimï¿½nez', '8888-0003', 'roberto@example.com', '3-7777-7777', 3, 3, 1),
+('Roberto', 'Campos', 'Jiménez', '8888-0003', 'roberto@example.com', '3-7777-7777', 3, 3, 1),
 ('Daniela', 'Alvarado', 'Vega', '8888-0004', 'daniela@example.com', '4-6666-6666', 4, 4, 1),
-('Kevin', 'Salas', 'Lï¿½pez', '8888-0005', 'kevin@example.com', '5-5555-5555', 5, 5, 1);
+('Kevin', 'Salas', 'López', '8888-0005', 'kevin@example.com', '5-5555-5555', 5, 5, 1);
 
 
 INSERT INTO Vehiculo (Marca, Modelo, Precio, Id_Tipo_Combinacion, Cantidad_De_Puertas, Id_Estilo, Estado) VALUES
@@ -205,10 +222,46 @@ INSERT INTO Factura_Maestro_Detalle (Id_Factura, Id_Vehiculo, Estado) VALUES
 (5, 5, 1);
 
 
+--CRUD
+--Create
+--Read = simple o con parametros
+--Update
+--Delete = fisico o logico
 
 
+--Vista
+--Store Procedure
+
+--Ejemplos de Read con parametros
+--Where trae los datos donde se cumpla la condicion programa luego del where
+SELECT * FROM Cliente WHERE Id_Cliente = 4
+--Alias, sirve para ponerme un diminutivo o un alias a una tabla y asi llamar mas facil sus columnas
+SELECT * FROM Cliente C WHERE C.Id_Cliente = 4
+--Usando el alias para traer columnas
+SELECT C.Email, C.Nombre FROM Cliente C WHERE C.Id_Cliente = 4
+--Usando el alias para traer columnas y renombrando el nombre de una columna(alias)
+SELECT C.Nombre AS 'Cliente', C.Email AS 'Correo'  FROM Cliente C WHERE C.Id_Cliente = 4
+--Where para filtrar por texto
+SELECT C.* FROM Cliente C WHERE C.Primer_Apellido = 'Loaiza'
+--Where para filtrar por texto pero no sabiendo todos los datos
+SELECT C.* FROM Cliente C WHERE C.Primer_Apellido LIKE 'Loa%'
+SELECT C.* FROM Cliente C WHERE C.Primer_Apellido LIKE '%zar'
+SELECT C.* FROM Cliente C WHERE C.Cedula LIKE '%7890%'
+
+--Update
+UPDATE Cliente SET Segundo_Apellido = 'Chavez', Email = 'anavargas@example.com'  WHERE Id_Cliente = 4   
+--Update sin where, tener cuidado al ejecutar, solo cuando me conviene
+UPDATE Cliente SET Telefono = '89736600' 
+SELECT * FROM Cliente
+
+--Delete
+--Delete Fisico
+DELETE Cliente WHERE Id_Cliente = 6
 
 
+INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email, Cedula, Fecha_Nacimiento, Estado) VALUES
+('Veronica', 'Loaiza', 'Cordero', '8888-8882', 'vero@example.com', '1-1234-1258', '1990-01-01', 1)
 
-
-
+--Delete logico
+SELECT * FROM Empleado
+UPDATE Empleado SET Estado = 0 WHERE Id_Empleado = 3
