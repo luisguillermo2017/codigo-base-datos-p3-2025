@@ -266,3 +266,5 @@ INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email,
 --Delete logico
 SELECT * FROM Empleado
 UPDATE Empleado SET Estado = 0 WHERE Id_Empleado = 3
+
+--- fin del dia miercoles 18 Junio 2025
