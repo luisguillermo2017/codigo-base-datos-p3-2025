@@ -129,23 +129,23 @@ INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email,
 ('Mariana', 'Gomez', 'Zamora', '8999-9999', 'mariana@example.com', '2-5678-5678', '1985-02-15', 1),
 ('Carlos', 'Mora', 'Sanchez', '8777-7777', 'carlos@example.com', '3-3456-3456', '1992-06-25', 1),
 ('Ana', 'Vargas', 'Chaves', '8666-6666', 'ana@example.com', '4-7890-7890', '1998-12-10', 0),
-('Jorge', 'Alpízar', 'Mejía', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
-
+('Jorge', 'Alpï¿½zar', 'Mejï¿½a', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
+('JosÃ©', 'HernÃ¡ndez', 'LÃ³pez', '8555-5555', 'jose@example.com', '5-0001-1001', '1998-04-08', 1);
 
 INSERT INTO Sede (Nombre, Descripcion, Telefono, Estado) VALUES
-('San José', 'Sucursal principal en San José centro', '2222-2222', 1),
+('San Josï¿½', 'Sucursal principal en San Josï¿½ centro', '2222-2222', 1),
 ('Alajuela', 'Sucursal ubicada en el centro de Alajuela', '2433-1122', 1),
 ('Heredia', 'Sucursal al norte de Heredia centro', '2266-3344', 1),
-('Cartago', 'Sucursal cercana a la Basílica', '2555-7788', 1),
-('Limón', 'Sucursal principal del Caribe', '2750-0000', 0);
+('Cartago', 'Sucursal cercana a la Basï¿½lica', '2555-7788', 1),
+('Limï¿½n', 'Sucursal principal del Caribe', '2750-0000', 0);
 
 
 INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
 ('Gerente', 'Responsable de toda la sucursal', 1),
-('Vendedor', 'Encargado de ventas y atención al cliente', 1),
-('Mecánico', 'Responsable del mantenimiento de vehículos', 1),
+('Vendedor', 'Encargado de ventas y atenciï¿½n al cliente', 1),
+('Mecï¿½nico', 'Responsable del mantenimiento de vehï¿½culos', 1),
 ('Asistente', 'Asistente administrativo general', 1),
-('Contador', 'Encargado del área financiera', 1);
+('Contador', 'Encargado del ï¿½rea financiera', 1);
 
 
 INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
@@ -157,27 +157,27 @@ INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
 
 
 INSERT INTO Tipo_Combinacion (Nombre, Descripcion, Estado) VALUES
-('Manual', 'Transmisión manual', 1),
-('Automática', 'Transmisión automática', 1),
-('Mixta', 'Transmisión mixta (semi)', 1),
-('Eléctrico', 'Motor eléctrico sin marchas', 1),
-('CVT', 'Transmisión continuamente variable', 1);
+('Manual', 'Transmisiï¿½n manual', 1),
+('Automï¿½tica', 'Transmisiï¿½n automï¿½tica', 1),
+('Mixta', 'Transmisiï¿½n mixta (semi)', 1),
+('Elï¿½ctrico', 'Motor elï¿½ctrico sin marchas', 1),
+('CVT', 'Transmisiï¿½n continuamente variable', 1);
 
 
 INSERT INTO Estilo (Nombre, Descripcion, Estado) VALUES
-('Sedán', 'Vehículo con carrocería clásica de 4 puertas', 1),
-('SUV', 'Vehículo deportivo utilitario', 1),
+('Sedï¿½n', 'Vehï¿½culo con carrocerï¿½a clï¿½sica de 4 puertas', 1),
+('SUV', 'Vehï¿½culo deportivo utilitario', 1),
 ('Hatchback', 'Compacto con maletera integrada', 1),
-('Pickup', 'Vehículo con cajón de carga', 1),
+('Pickup', 'Vehï¿½culo con cajï¿½n de carga', 1),
 ('Convertible', 'Techo removible para viajes al aire libre', 1);
 
 
 INSERT INTO Empleado (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email, Cedula, Id_Sede, Id_Puesto, Estado) VALUES
-('Oscar', 'Ramírez', 'Zúñiga', '8888-0001', 'oscar@example.com', '1-9999-9999', 1, 1, 1),
+('Oscar', 'Ramï¿½rez', 'Zï¿½ï¿½iga', '8888-0001', 'oscar@example.com', '1-9999-9999', 1, 1, 1),
 ('Paola', 'Herrera', 'Solano', '8888-0002', 'paola@example.com', '2-8888-8888', 2, 2, 1),
-('Roberto', 'Campos', 'Jiménez', '8888-0003', 'roberto@example.com', '3-7777-7777', 3, 3, 1),
+('Roberto', 'Campos', 'Jimï¿½nez', '8888-0003', 'roberto@example.com', '3-7777-7777', 3, 3, 1),
 ('Daniela', 'Alvarado', 'Vega', '8888-0004', 'daniela@example.com', '4-6666-6666', 4, 4, 1),
-('Kevin', 'Salas', 'López', '8888-0005', 'kevin@example.com', '5-5555-5555', 5, 5, 1);
+('Kevin', 'Salas', 'Lï¿½pez', '8888-0005', 'kevin@example.com', '5-5555-5555', 5, 5, 1);
 
 
 INSERT INTO Vehiculo (Marca, Modelo, Precio, Id_Tipo_Combinacion, Cantidad_De_Puertas, Id_Estilo, Estado) VALUES
