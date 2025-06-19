@@ -129,7 +129,7 @@ INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email,
 ('Mariana', 'Gomez', 'Zamora', '8999-9999', 'mariana@example.com', '2-5678-5678', '1985-02-15', 1),
 ('Carlos', 'Mora', 'Sanchez', '8777-7777', 'carlos@example.com', '3-3456-3456', '1992-06-25', 1),
 ('Ana', 'Vargas', 'Chaves', '8666-6666', 'ana@example.com', '4-7890-7890', '1998-12-10', 0),
-('Jorge', 'Alp�zar', 'Mej�a', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
+('Jorge', 'Alp�zar', 'Mej�a', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1),
 ('José', 'Hernández', 'López', '8555-5555', 'jose@example.com', '5-0001-1001', '1998-04-08', 1);
 
 INSERT INTO Sede (Nombre, Descripcion, Telefono, Estado) VALUES
