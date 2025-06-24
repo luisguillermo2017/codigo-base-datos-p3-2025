@@ -5,13 +5,14 @@ GO
 DROP DATABASE IF EXISTS Venta_Vehiculos_P3_2025;
 GO
 
+--Crear una base de datos
 CREATE DATABASE Venta_Vehiculos_P3_2025;
 GO
 
 
 --Apuntar a la base de datos en la que deseas ejecutar los querys
 USE Venta_Vehiculos_P3_2025;
-
+GO
 --Crear la tabla Cliente
 CREATE TABLE Cliente (
     Id_Cliente INT IDENTITY(1,1) NOT NULL,
@@ -27,7 +28,7 @@ CREATE TABLE Cliente (
 );
 
 --Consultar todos los datos de mi tabla
---SELECT * FROM Cliente
+SELECT * FROM Cliente
 
 --Crear la tabla Sede
 CREATE TABLE Sede (
@@ -39,6 +40,10 @@ CREATE TABLE Sede (
     CONSTRAINT PK_Sede PRIMARY KEY (Id_Sede)
 );
 
+--Consultar todos los datos de mi tabla
+SELECT * FROM Sede
+
+
 --Crear la tabla Puesto
 CREATE TABLE Puesto (
     Id_Puesto TINYINT IDENTITY(1,1) NOT NULL,
@@ -49,6 +54,9 @@ CREATE TABLE Puesto (
     CONSTRAINT PK_Puesto PRIMARY KEY (Id_Puesto)
 );
 
+--Consultar todos los datos de mi tabla
+SELECT * FROM Puesto
+
 --Crear la tabla Tipo_Combinacion
 CREATE TABLE Tipo_Combinacion (
     Id_Tipo_Combinacion TINYINT IDENTITY(1,1) NOT NULL,
@@ -58,6 +66,10 @@ CREATE TABLE Tipo_Combinacion (
     CONSTRAINT PK_Tipo_Combinacion PRIMARY KEY (Id_Tipo_Combinacion)
 );
 
+--Consultar todos los datos de mi tabla
+SELECT * FROM Tipo_Combinacion
+
+
 --Crear la tabla Estilo
 CREATE TABLE Estilo (
     Id_Estilo TINYINT IDENTITY(1,1) NOT NULL,
@@ -66,6 +78,9 @@ CREATE TABLE Estilo (
     Estado BIT NOT NULL,
     CONSTRAINT PK_Estilo PRIMARY KEY (Id_Estilo)
 );
+
+--Consultar todos los datos de mi tabla
+SELECT * FROM Estilo
 
 --Crear la tabla Empleado
 CREATE TABLE Empleado (
@@ -84,6 +99,9 @@ CREATE TABLE Empleado (
     CONSTRAINT FK_Empleado_Puesto FOREIGN KEY (Id_Puesto) REFERENCES Puesto(Id_Puesto)
 );
 
+--Consultar todos los datos de mi tabla
+SELECT * FROM Empleado
+
 --Crear la tabla Vehiculo
 CREATE TABLE Vehiculo (
     Id_Vehiculo INT IDENTITY(1,1) NOT NULL,
@@ -95,8 +113,8 @@ CREATE TABLE Vehiculo (
     Id_Estilo TINYINT NOT NULL,
     Estado BIT NOT NULL,
     CONSTRAINT PK_Vehiculo PRIMARY KEY (Id_Vehiculo),
-    CONSTRAINT FK_Empleado_TipoCombinacion FOREIGN KEY (Id_Tipo_Combinacion) REFERENCES Tipo_Combinacion(Id_Tipo_Combinacion),
-    CONSTRAINT FK_Empleado_Estilo FOREIGN KEY (Id_Estilo) REFERENCES Estilo(Id_Estilo)
+    CONSTRAINT FK_Vehiculo_TipoCombinacion FOREIGN KEY (Id_Tipo_Combinacion) REFERENCES Tipo_Combinacion(Id_Tipo_Combinacion),
+    CONSTRAINT FK_Vehiculo_Estilo FOREIGN KEY (Id_Estilo) REFERENCES Estilo(Id_Estilo)
 );
 
 --Crear la tabla Factura
@@ -205,10 +223,46 @@ INSERT INTO Factura_Maestro_Detalle (Id_Factura, Id_Vehiculo, Estado) VALUES
 (5, 5, 1);
 
 
+--CRUD
+--Create
+--Read = simple o con parametros
+--Update
+--Delete = fisico o logico
 
 
+--Vista
+--Store Procedure
+
+--Ejemplos de Read con parametros
+--Where trae los datos donde se cumpla la condicion programa luego del where
+SELECT * FROM Cliente WHERE Id_Cliente = 4
+--Alias, sirve para ponerme un diminutivo o un alias a una tabla y asi llamar mas facil sus columnas
+SELECT * FROM Cliente C WHERE C.Id_Cliente = 4
+--Usando el alias para traer columnas
+SELECT C.Email, C.Nombre FROM Cliente C WHERE C.Id_Cliente = 4
+--Usando el alias para traer columnas y renombrando el nombre de una columna(alias)
+SELECT C.Nombre AS 'Cliente', C.Email AS 'Correo'  FROM Cliente C WHERE C.Id_Cliente = 4
+--Where para filtrar por texto
+SELECT C.* FROM Cliente C WHERE C.Primer_Apellido = 'Loaiza'
+--Where para filtrar por texto pero no sabiendo todos los datos
+SELECT C.* FROM Cliente C WHERE C.Primer_Apellido LIKE 'Loa%'
+SELECT C.* FROM Cliente C WHERE C.Primer_Apellido LIKE '%zar'
+SELECT C.* FROM Cliente C WHERE C.Cedula LIKE '%7890%'
+
+--Update
+UPDATE Cliente SET Segundo_Apellido = 'Chavez', Email = 'anavargas@example.com'  WHERE Id_Cliente = 4   
+--Update sin where, tener cuidado al ejecutar, solo cuando me conviene
+UPDATE Cliente SET Telefono = '89736600' 
+SELECT * FROM Cliente
+
+--Delete
+--Delete Fisico
+DELETE Cliente WHERE Id_Cliente = 6
 
 
+INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email, Cedula, Fecha_Nacimiento, Estado) VALUES
+('Veronica', 'Loaiza', 'Cordero', '8888-8882', 'vero@example.com', '1-1234-1258', '1990-01-01', 1)
 
-
-
+--Delete logico
+SELECT * FROM Empleado
+UPDATE Empleado SET Estado = 0 WHERE Id_Empleado = 3
