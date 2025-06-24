@@ -1,4 +1,4 @@
---Crear una base de datos
+    --Crear una base de datos
 -- PRUEBA DE CAMBIOS
 USE Master;
 GO
@@ -268,3 +268,4 @@ SELECT * FROM Empleado
 UPDATE Empleado SET Estado = 0 WHERE Id_Empleado = 3
 
 --- fin del dia miercoles 18 Junio 2025
+--- comentario final
