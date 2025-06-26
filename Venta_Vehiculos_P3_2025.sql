@@ -148,6 +148,7 @@ INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email,
 ('Mariana', 'Gomez', 'Zamora', '8999-9999', 'mariana@example.com', '2-5678-5678', '1985-02-15', 1),
 ('Carlos', 'Mora', 'Sanchez', '8777-7777', 'carlos@example.com', '3-3456-3456', '1992-06-25', 1),
 ('Ana', 'Vargas', 'Chaves', '8666-6666', 'ana@example.com', '4-7890-7890', '1998-12-10', 0),
+<<<<<<< HEAD
 ('Jorge', 'Alp�zar', 'Mej�a', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
 
 
@@ -157,14 +158,32 @@ INSERT INTO Sede (Nombre, Descripcion, Telefono, Estado) VALUES
 ('Heredia', 'Sucursal al norte de Heredia centro', '2266-3344', 1),
 ('Cartago', 'Sucursal cercana a la Bas�lica', '2555-7788', 1),
 ('Lim�n', 'Sucursal principal del Caribe', '2750-0000', 0);
+=======
+('Jorge', 'Alp zar', 'Mej a', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
+
+
+INSERT INTO Sede (Nombre, Descripcion, Telefono, Estado) VALUES
+('San Jos ', 'Sucursal principal en San Jos  centro', '2222-2222', 1),
+('Alajuela', 'Sucursal ubicada en el centro de Alajuela', '2433-1122', 1),
+('Heredia', 'Sucursal al norte de Heredia centro', '2266-3344', 1),
+('Cartago', 'Sucursal cercana a la Bas lica', '2555-7788', 1),
+('Lim n', 'Sucursal principal del Caribe', '2750-0000', 0);
+>>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
 
 
 INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
 ('Gerente', 'Responsable de toda la sucursal', 1),
+<<<<<<< HEAD
 ('Vendedor', 'Encargado de ventas y atenci�n al cliente', 1),
 ('Mec�nico', 'Responsable del mantenimiento de veh�culos', 1),
 ('Asistente', 'Asistente administrativo general', 1),
 ('Contador', 'Encargado del �rea financiera', 1);
+=======
+('Vendedor', 'Encargado de ventas y atenci n al cliente', 1),
+('Mec nico', 'Responsable del mantenimiento de veh culos', 1),
+('Asistente', 'Asistente administrativo general', 1),
+('Contador', 'Encargado del  rea financiera', 1);
+>>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
 
 
 INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
@@ -176,6 +195,7 @@ INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
 
 
 INSERT INTO Tipo_Combinacion (Nombre, Descripcion, Estado) VALUES
+<<<<<<< HEAD
 ('Manual', 'Transmisi�n manual', 1),
 ('Autom�tica', 'Transmisi�n autom�tica', 1),
 ('Mixta', 'Transmisi�n mixta (semi)', 1),
@@ -188,15 +208,37 @@ INSERT INTO Estilo (Nombre, Descripcion, Estado) VALUES
 ('SUV', 'Veh�culo deportivo utilitario', 1),
 ('Hatchback', 'Compacto con maletera integrada', 1),
 ('Pickup', 'Veh�culo con caj�n de carga', 1),
+=======
+('Manual', 'Transmisi n manual', 1),
+('Autom tica', 'Transmisi n autom tica', 1),
+('Mixta', 'Transmisi n mixta (semi)', 1),
+('El ctrico', 'Motor el ctrico sin marchas', 1),
+('CVT', 'Transmisi n continuamente variable', 1);
+
+
+INSERT INTO Estilo (Nombre, Descripcion, Estado) VALUES
+('Sed n', 'Veh culo con carrocer a cl sica de 4 puertas', 1),
+('SUV', 'Veh culo deportivo utilitario', 1),
+('Hatchback', 'Compacto con maletera integrada', 1),
+('Pickup', 'Veh culo con caj n de carga', 1),
+>>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
 ('Convertible', 'Techo removible para viajes al aire libre', 1);
 
 
 INSERT INTO Empleado (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email, Cedula, Id_Sede, Id_Puesto, Estado) VALUES
+<<<<<<< HEAD
 ('Oscar', 'Ram�rez', 'Z��iga', '8888-0001', 'oscar@example.com', '1-9999-9999', 1, 1, 1),
 ('Paola', 'Herrera', 'Solano', '8888-0002', 'paola@example.com', '2-8888-8888', 2, 2, 1),
 ('Roberto', 'Campos', 'Jim�nez', '8888-0003', 'roberto@example.com', '3-7777-7777', 3, 3, 1),
 ('Daniela', 'Alvarado', 'Vega', '8888-0004', 'daniela@example.com', '4-6666-6666', 4, 4, 1),
 ('Kevin', 'Salas', 'L�pez', '8888-0005', 'kevin@example.com', '5-5555-5555', 5, 5, 1);
+=======
+('Oscar', 'Ram rez', 'Z  iga', '8888-0001', 'oscar@example.com', '1-9999-9999', 1, 1, 1),
+('Paola', 'Herrera', 'Solano', '8888-0002', 'paola@example.com', '2-8888-8888', 2, 2, 1),
+('Roberto', 'Campos', 'Jim nez', '8888-0003', 'roberto@example.com', '3-7777-7777', 3, 3, 1),
+('Daniela', 'Alvarado', 'Vega', '8888-0004', 'daniela@example.com', '4-6666-6666', 4, 4, 1),
+('Kevin', 'Salas', 'L pez', '8888-0005', 'kevin@example.com', '5-5555-5555', 5, 5, 1);
+>>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
 
 
 INSERT INTO Vehiculo (Marca, Modelo, Precio, Id_Tipo_Combinacion, Cantidad_De_Puertas, Id_Estilo, Estado) VALUES
@@ -267,5 +309,86 @@ INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email,
 SELECT * FROM Empleado
 UPDATE Empleado SET Estado = 0 WHERE Id_Empleado = 3
 
+<<<<<<< HEAD
 --- fin del dia miercoles 18 Junio 2025
 --- comentario final
+=======
+--View
+--Vista: una consulta predefinida que puede traer diferentes resultados pero que su codigo nunca cambia
+SELECT * FROM Cliente
+SELECT * FROM Cliente WHERE Id_Cliente = 4
+
+--Crear un view
+CREATE OR ALTER VIEW V_Listar_Clientes
+AS
+SELECT * FROM Cliente WHERE Estado = 1
+
+--Ejecutando un View
+SELECT * FROM V_Listar_Clientes
+
+--Segundo ejemplo de creaci n de una vista
+CREATE VIEW V_Lista_Cliente_Unico
+AS
+SELECT 
+* 
+FROM Cliente 
+WHERE Id_Cliente = 2
+AND Estado = 1
+AND Nombre = 'Mariana'
+
+--Ejecuci n de la vista
+SELECT * FROM V_Lista_Cliente_Unico
+
+--Store Procedure
+--Procedimiento almacenado. Sirve para guardar una consulta que permite traer datos de manera dinamica
+SELECT * FROM Cliente WHERE Id_Cliente = 
+
+--Crear un procedimiento almacenado
+CREATE PROCEDURE SP_Cliente_Por_Id
+(@Id_Cliente INT)
+AS
+BEGIN
+
+    SELECT * FROM Cliente WHERE Id_Cliente = @Id_Cliente
+
+END
+
+--Ejecuci n formal de un SP
+EXECUTE SP_Cliente_Por_Id @Id_Cliente = 4
+
+--Creando un segundo SP
+CREATE OR ALTER PROCEDURE SP_Cliente_Por_Id
+(@Id_Cliente1 INT, @Id_Cliente2 INT)
+AS
+BEGIN
+
+    SELECT * FROM Cliente WHERE Id_Cliente = @Id_Cliente1 OR Id_Cliente = @Id_Cliente2
+
+END
+
+EXECUTE SP_Cliente_Por_Id @Id_Cliente1 = 1, @Id_Cliente2 = 4
+
+
+--Consulta para filtrar por rangos
+SELECT * FROM Cliente WHERE Id_Cliente > 2
+SELECT * FROM Cliente WHERE Id_Cliente > 2 AND Id_Cliente < 5
+SELECT * FROM Cliente WHERE Id_Cliente IN(1,2,7)
+
+--Crear un procedimiento almacenado con validaciones
+CREATE OR ALTER PROCEDURE SP_Cliente_Por_Id
+(@Id_Cliente INT)
+AS
+BEGIN
+
+    IF(@Id_Cliente > 0)
+    BEGIN
+        SELECT * FROM Cliente WHERE Id_Cliente = @Id_Cliente
+    END
+    ELSE
+    BEGIN
+        SELECT 'Debes ingresar un id cliente'
+    END
+    
+END
+
+>>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
