@@ -391,4 +391,152 @@ BEGIN
     
 END
 
+<<<<<<< HEAD
 >>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
+=======
+
+
+
+--SP Create
+--Read simple es una vista
+--SP con Read con parametros
+--SP update
+--SP delete fisico
+--SP delete logico
+
+
+--Crear un SP para crear un cliente
+CREATE PROCEDURE SP_Cliente_Insertar
+(
+@Nombre NVARCHAR(30),
+@Primer_Apellido NVARCHAR(30),
+@Segundo_Apellido NVARCHAR(30),
+@Telefono NVARCHAR(30),
+@Email NVARCHAR(50),
+@Cedula NVARCHAR(30),
+@Fecha_Nacimiento DATE
+)
+AS
+BEGIN
+    INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email, Cedula, Fecha_Nacimiento, Estado) VALUES
+    (@Nombre, @Primer_Apellido, @Segundo_Apellido, @Telefono, @Email, @Cedula, @Fecha_Nacimiento, 1)
+END
+
+--Una nueva manera de ejecutar un SP
+EXEC SP_Cliente_Insertar 'Fernanda', 'Loria', 'Castillo', '85201478', 'flc@outlook.es', '707770896', '1995-12-06'
+
+SELECT * FROM Cliente
+
+--SP para actualizar un cliente
+CREATE PROCEDURE SP_Cliente_Actualizar
+(
+@Id_Cliente INT,
+@Nombre NVARCHAR(30),
+@Primer_Apellido NVARCHAR(30),
+@Segundo_Apellido NVARCHAR(30),
+@Telefono NVARCHAR(30),
+@Email NVARCHAR(50),
+@Cedula NVARCHAR(30),
+@Fecha_Nacimiento DATE,
+@Estado BIT
+)
+AS
+BEGIN
+
+    UPDATE 
+    Cliente 
+    SET
+    Nombre = @Nombre,
+    Primer_Apellido = @Primer_Apellido,
+    Segundo_Apellido = @Segundo_Apellido, 
+    Telefono = @Telefono,
+    Email = @Email,
+    Cedula = @Cedula,
+    Fecha_Nacimiento = @Fecha_Nacimiento,
+    Estado = @Estado
+    WHERE Id_Cliente = @Id_Cliente
+
+END
+
+--Ejecuci n del SP Actualizar
+EXEC SP_Cliente_Actualizar 8, 'Fernanda Gabriela', 'Vasquez', 'Cascante', '88665544', 'fgvc@hotmail.com', '707770896', '1995-12-06', 1
+
+--Crear un SP para un delete fisico de un cliente
+CREATE PROCEDURE SP_Cliente_Borrado_Fisico
+(
+@Id_Cliente INT
+)
+AS
+BEGIN
+    DELETE Cliente WHERE Id_Cliente = @Id_Cliente
+END
+
+--Ejecuci n del SP Delete Fisico
+EXEC SP_Cliente_Borrado_Fisico 8
+
+--Crear un SP para delete logico. Vamos a crear una funcionalidad para activar o desactivar
+CREATE PROCEDURE SP_Cliente_Activar_Inactivar
+(
+@Id_Cliente INT,
+@Estado BIT
+)
+AS
+BEGIN
+    UPDATE Cliente SET Estado = @Estado  WHERE Id_Cliente = @Id_Cliente
+END
+
+--Ejecuci n del SP delete fisico(activar o inactivar)
+EXEC SP_Cliente_Activar_Inactivar 7,1
+
+
+SELECT * FROM Cliente
+
+--Otras consultas mas avanzadas
+--Subquery
+--Variables
+--JOINS
+--Triggers
+--Devolver una respuesta en formato JSON
+--Indices
+--Backup de bases de datos
+--Creaci n de usuarios
+--Configuraci n de Puertos para que el motor sea consumido por un tercero
+--DBA: Database Administrator
+
+--TOP
+SELECT TOP 4 * FROM Cliente
+
+--Ejemplo de MYSQL para ver una diferencia
+SELECT * FROM Cliente LIMIT 4
+
+--MAX
+SELECT MAX(Precio) AS 'Precio_maximo' FROM Vehiculo
+
+--MIN
+SELECT MIN(Precio) AS 'Precio_minimo' FROM Vehiculo
+
+--CONCAT
+SELECT 
+CONCAT(E.Nombre, ' ', E.Primer_Apellido, ' ', E.Segundo_Apellido) AS 'Nombre Completo'
+FROM 
+Empleado E
+
+--AVG
+SELECT AVG(Precio) FROM Vehiculo
+
+--COUNT
+SELECT COUNT(*) AS 'Cantidad de Clientes' FROM Cliente
+
+--Order by
+SELECT * FROM Cliente ORDER BY Cedula
+SELECT * FROM Cliente ORDER BY Cedula ASC
+SELECT * FROM Cliente ORDER BY Cedula DESC
+
+--Subquery
+--Realizar una consulta dentro de otra consulta.
+
+SELECT * FROM Empleado WHERE Id_Empleado = (SELECT Id_Empleado FROM Empleado WHERE Cedula = '4-6666-6666')
+
+SELECT * FROM Factura WHERE Id_Empleado = (SELECT Id_Empleado FROM Empleado WHERE Cedula = '4-6666-6666')
+
+>>>>>>> c96daced673e7d6fcb35b25e8f9da7217292fb1f
