@@ -149,6 +149,7 @@ INSERT INTO Cliente (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email,
 ('Carlos', 'Mora', 'Sanchez', '8777-7777', 'carlos@example.com', '3-3456-3456', '1992-06-25', 1),
 ('Ana', 'Vargas', 'Chaves', '8666-6666', 'ana@example.com', '4-7890-7890', '1998-12-10', 0),
 <<<<<<< HEAD
+<<<<<<< HEAD
 ('Jorge', 'Alp�zar', 'Mej�a', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
 
 
@@ -160,19 +161,28 @@ INSERT INTO Sede (Nombre, Descripcion, Telefono, Estado) VALUES
 ('Lim�n', 'Sucursal principal del Caribe', '2750-0000', 0);
 =======
 ('Jorge', 'Alp zar', 'Mej a', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
+=======
+('Jorge', 'Alpízar', 'Mejía', '8555-5555', 'jorge@example.com', '5-0001-0001', '1995-04-08', 1);
+>>>>>>> fced29817bc31e256f57626dc42fb322e5b458aa
 
 
 INSERT INTO Sede (Nombre, Descripcion, Telefono, Estado) VALUES
-('San Jos ', 'Sucursal principal en San Jos  centro', '2222-2222', 1),
+('San José', 'Sucursal principal en San José centro', '2222-2222', 1),
 ('Alajuela', 'Sucursal ubicada en el centro de Alajuela', '2433-1122', 1),
 ('Heredia', 'Sucursal al norte de Heredia centro', '2266-3344', 1),
+<<<<<<< HEAD
 ('Cartago', 'Sucursal cercana a la Bas lica', '2555-7788', 1),
 ('Lim n', 'Sucursal principal del Caribe', '2750-0000', 0);
 >>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
+=======
+('Cartago', 'Sucursal cercana a la Basílica', '2555-7788', 1),
+('Limón', 'Sucursal principal del Caribe', '2750-0000', 0);
+>>>>>>> fced29817bc31e256f57626dc42fb322e5b458aa
 
 
 INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
 ('Gerente', 'Responsable de toda la sucursal', 1),
+<<<<<<< HEAD
 <<<<<<< HEAD
 ('Vendedor', 'Encargado de ventas y atenci�n al cliente', 1),
 ('Mec�nico', 'Responsable del mantenimiento de veh�culos', 1),
@@ -184,6 +194,12 @@ INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
 ('Asistente', 'Asistente administrativo general', 1),
 ('Contador', 'Encargado del  rea financiera', 1);
 >>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
+=======
+('Vendedor', 'Encargado de ventas y atención al cliente', 1),
+('Mecánico', 'Responsable del mantenimiento de vehículos', 1),
+('Asistente', 'Asistente administrativo general', 1),
+('Contador', 'Encargado del área financiera', 1);
+>>>>>>> fced29817bc31e256f57626dc42fb322e5b458aa
 
 
 INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
@@ -195,6 +211,7 @@ INSERT INTO Puesto (Nombre, Descripcion, Estado) VALUES
 
 
 INSERT INTO Tipo_Combinacion (Nombre, Descripcion, Estado) VALUES
+<<<<<<< HEAD
 <<<<<<< HEAD
 ('Manual', 'Transmisi�n manual', 1),
 ('Autom�tica', 'Transmisi�n autom�tica', 1),
@@ -214,18 +231,30 @@ INSERT INTO Estilo (Nombre, Descripcion, Estado) VALUES
 ('Mixta', 'Transmisi n mixta (semi)', 1),
 ('El ctrico', 'Motor el ctrico sin marchas', 1),
 ('CVT', 'Transmisi n continuamente variable', 1);
+=======
+('Manual', 'Transmisión manual', 1),
+('Automática', 'Transmisión automática', 1),
+('Mixta', 'Transmisión mixta (semi)', 1),
+('Eléctrico', 'Motor eléctrico sin marchas', 1),
+('CVT', 'Transmisión continuamente variable', 1);
+>>>>>>> fced29817bc31e256f57626dc42fb322e5b458aa
 
 
 INSERT INTO Estilo (Nombre, Descripcion, Estado) VALUES
-('Sed n', 'Veh culo con carrocer a cl sica de 4 puertas', 1),
-('SUV', 'Veh culo deportivo utilitario', 1),
+('Sedán', 'Vehículo con carrocería clásica de 4 puertas', 1),
+('SUV', 'Vehículo deportivo utilitario', 1),
 ('Hatchback', 'Compacto con maletera integrada', 1),
+<<<<<<< HEAD
 ('Pickup', 'Veh culo con caj n de carga', 1),
 >>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
+=======
+('Pickup', 'Vehículo con cajón de carga', 1),
+>>>>>>> fced29817bc31e256f57626dc42fb322e5b458aa
 ('Convertible', 'Techo removible para viajes al aire libre', 1);
 
 
 INSERT INTO Empleado (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email, Cedula, Id_Sede, Id_Puesto, Estado) VALUES
+<<<<<<< HEAD
 <<<<<<< HEAD
 ('Oscar', 'Ram�rez', 'Z��iga', '8888-0001', 'oscar@example.com', '1-9999-9999', 1, 1, 1),
 ('Paola', 'Herrera', 'Solano', '8888-0002', 'paola@example.com', '2-8888-8888', 2, 2, 1),
@@ -234,11 +263,18 @@ INSERT INTO Empleado (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email
 ('Kevin', 'Salas', 'L�pez', '8888-0005', 'kevin@example.com', '5-5555-5555', 5, 5, 1);
 =======
 ('Oscar', 'Ram rez', 'Z  iga', '8888-0001', 'oscar@example.com', '1-9999-9999', 1, 1, 1),
+=======
+('Oscar', 'Ramírez', 'Zúñiga', '8888-0001', 'oscar@example.com', '1-9999-9999', 1, 1, 1),
+>>>>>>> fced29817bc31e256f57626dc42fb322e5b458aa
 ('Paola', 'Herrera', 'Solano', '8888-0002', 'paola@example.com', '2-8888-8888', 2, 2, 1),
-('Roberto', 'Campos', 'Jim nez', '8888-0003', 'roberto@example.com', '3-7777-7777', 3, 3, 1),
+('Roberto', 'Campos', 'Jiménez', '8888-0003', 'roberto@example.com', '3-7777-7777', 3, 3, 1),
 ('Daniela', 'Alvarado', 'Vega', '8888-0004', 'daniela@example.com', '4-6666-6666', 4, 4, 1),
+<<<<<<< HEAD
 ('Kevin', 'Salas', 'L pez', '8888-0005', 'kevin@example.com', '5-5555-5555', 5, 5, 1);
 >>>>>>> 841c17abaeec6fe1f4213a49dfe11eff232c29f4
+=======
+('Kevin', 'Salas', 'López', '8888-0005', 'kevin@example.com', '5-5555-5555', 5, 5, 1);
+>>>>>>> fced29817bc31e256f57626dc42fb322e5b458aa
 
 
 INSERT INTO Vehiculo (Marca, Modelo, Precio, Id_Tipo_Combinacion, Cantidad_De_Puertas, Id_Estilo, Estado) VALUES
@@ -326,7 +362,7 @@ SELECT * FROM Cliente WHERE Estado = 1
 --Ejecutando un View
 SELECT * FROM V_Listar_Clientes
 
---Segundo ejemplo de creaci n de una vista
+--Segundo ejemplo de creación de una vista
 CREATE VIEW V_Lista_Cliente_Unico
 AS
 SELECT 
@@ -336,7 +372,7 @@ WHERE Id_Cliente = 2
 AND Estado = 1
 AND Nombre = 'Mariana'
 
---Ejecuci n de la vista
+--Ejecución de la vista
 SELECT * FROM V_Lista_Cliente_Unico
 
 --Store Procedure
@@ -353,7 +389,7 @@ BEGIN
 
 END
 
---Ejecuci n formal de un SP
+--Ejecución formal de un SP
 EXECUTE SP_Cliente_Por_Id @Id_Cliente = 4
 
 --Creando un segundo SP
@@ -458,7 +494,7 @@ BEGIN
 
 END
 
---Ejecuci n del SP Actualizar
+--Ejecución del SP Actualizar
 EXEC SP_Cliente_Actualizar 8, 'Fernanda Gabriela', 'Vasquez', 'Cascante', '88665544', 'fgvc@hotmail.com', '707770896', '1995-12-06', 1
 
 --Crear un SP para un delete fisico de un cliente
@@ -471,7 +507,7 @@ BEGIN
     DELETE Cliente WHERE Id_Cliente = @Id_Cliente
 END
 
---Ejecuci n del SP Delete Fisico
+--Ejecución del SP Delete Fisico
 EXEC SP_Cliente_Borrado_Fisico 8
 
 --Crear un SP para delete logico. Vamos a crear una funcionalidad para activar o desactivar
@@ -485,7 +521,7 @@ BEGIN
     UPDATE Cliente SET Estado = @Estado  WHERE Id_Cliente = @Id_Cliente
 END
 
---Ejecuci n del SP delete fisico(activar o inactivar)
+--Ejecución del SP delete fisico(activar o inactivar)
 EXEC SP_Cliente_Activar_Inactivar 7,1
 
 
@@ -499,8 +535,8 @@ SELECT * FROM Cliente
 --Devolver una respuesta en formato JSON
 --Indices
 --Backup de bases de datos
---Creaci n de usuarios
---Configuraci n de Puertos para que el motor sea consumido por un tercero
+--Creación de usuarios
+--Configuración de Puertos para que el motor sea consumido por un tercero
 --DBA: Database Administrator
 
 --TOP
@@ -539,4 +575,70 @@ SELECT * FROM Empleado WHERE Id_Empleado = (SELECT Id_Empleado FROM Empleado WHE
 
 SELECT * FROM Factura WHERE Id_Empleado = (SELECT Id_Empleado FROM Empleado WHERE Cedula = '4-6666-6666')
 
+<<<<<<< HEAD
 >>>>>>> c96daced673e7d6fcb35b25e8f9da7217292fb1f
+=======
+
+--Variables
+DECLARE @Id_Sede TINYINT = (SELECT Id_Sede FROM Sede WHERE Nombre = 'Limón')
+--SELECT * FROM Empleado
+
+INSERT INTO Empleado (Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Email, Cedula, Id_Sede, Id_Puesto, Estado) VALUES
+('Maria', 'Ramírez', 'Zúñiga', '8888-0003', 'maria@example.com', '1-9999-9990', @Id_Sede, 1, 1),
+('Rafael,', 'Herrera', 'Solano', '8888-0004', 'rafael@example.com', '2-8888-880', @Id_Sede, 2, 1)
+
+--JOIN
+--Base de datos relacional: vamos a relacionar diferentes tablas con los diferentes tipos de JOINS
+
+--INNER JOIN
+SELECT
+E.Nombre, E.Primer_Apellido, E.Segundo_Apellido, S.Nombre
+FROM Empleado E
+INNER JOIN Sede S ON E.Id_Sede = S.Id_Sede
+
+
+SELECT * FROM Sede
+--Una consulta con el nombre completo del empleado mas el nombre del puesto
+SELECT
+CONCAT(E.Nombre, ' ', E.Primer_Apellido, ' ', E.Segundo_Apellido) AS 'Empleado',
+P.Nombre AS 'Puesto'
+FROM Empleado E
+INNER JOIN Puesto P ON E.Id_Puesto = P.Id_Puesto
+
+SELECT
+E.Id_Empleado,
+E.Nombre,
+E.Primer_Apellido,
+E.Segundo_Apellido,
+E.Telefono,
+E.Email,
+E.Cedula,
+S.Nombre AS 'Sede',
+P.Nombre AS 'Puesto',
+E.Estado
+FROM
+Empleado E
+INNER JOIN Puesto P ON E.Id_Puesto = P.Id_Puesto
+INNER JOIN Sede S ON E.Id_Sede = S.Id_Sede
+
+--Mostrar la información de la tabla Factura pero que en lugar de los id, vengan los nombres
+SELECT
+F.Id_Factura,
+CONCAT(E.Nombre, ' ', E.Primer_Apellido, ' ', E.Segundo_Apellido) AS 'Empleado',
+CONCAT(C.Nombre, ' ', C.Primer_Apellido, ' ', C.Segundo_Apellido) AS 'Cliente',
+F.Fecha_Hora,
+S.Nombre AS 'Sede',
+F.Estado
+FROM Factura F
+INNER JOIN Empleado E ON F.Id_Empleado = E.Id_Empleado
+INNER JOIN Cliente C ON F.Id_Cliente = C.Id_Cliente
+INNER JOIN Sede S ON F.Id_Sede = S.Id_Sede
+
+
+SELECT * FROM Vehiculo
+
+
+SELECT * FROM Factura
+
+SELECT * FROM Empleado
+>>>>>>> fced29817bc31e256f57626dc42fb322e5b458aa
