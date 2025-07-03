@@ -552,3 +552,102 @@ SELECT * FROM Vehiculo
 SELECT * FROM Factura
 
 SELECT * FROM Empleado
+
+
+--Practica de Rigth JOIN
+SELECT
+E.Id_Empleado,
+E.Nombre,
+E.Primer_Apellido,
+E.Segundo_Apellido,
+E.Telefono,
+E.Email,
+E.Cedula,
+E.Id_Puesto,
+P.Nombre AS 'Puesto',
+E.Id_Sede,
+E.Estado
+FROM
+Empleado E
+RIGHT JOIN Puesto P ON E.Id_Puesto = P.Id_Puesto
+
+--Practica del LEFT JOIN
+SELECT
+E.Id_Empleado,
+E.Nombre,
+E.Primer_Apellido,
+E.Segundo_Apellido,
+E.Telefono,
+E.Email,
+E.Cedula,
+E.Id_Puesto,
+E.Id_Sede,
+E.Estado,
+F.Id_Factura,
+F.Fecha_Hora
+FROM
+Empleado E
+LEFT JOIN Factura F ON E.Id_Empleado = F.Id_Empleado
+
+
+--FULL JOIN
+SELECT
+F.Id_Factura,
+CONCAT(E.Nombre, ' ', E.Primer_Apellido, ' ', E.Segundo_Apellido) AS 'Empleado',
+CONCAT(C.Nombre, ' ', C.Primer_Apellido, ' ', C.Segundo_Apellido) AS 'Cliente',
+F.Fecha_Hora,
+S.Nombre AS 'Sede',
+F.Estado
+FROM Factura F
+FULL JOIN Empleado E ON F.Id_Empleado = E.Id_Empleado
+FULL JOIN Cliente C ON F.Id_Cliente = C.Id_Cliente
+FULL JOIN Sede S ON F.Id_Sede = S.Id_Sede
+
+
+--TRIGGER
+--Desencadenante de una acción luego de que suceda una previamente identificada
+
+--Se crea la tabla Inventario Vehiculo
+CREATE TABLE Inventario_Vehiculo(
+Id_Inventario_Vehiculo INT IDENTITY(1,1) NOT NULL,
+Id_Vehiculo INT NOT NULL,
+Cantidad INT NOT NULL,
+Estado BIT NOT NULL,
+
+PRIMARY KEY(Id_Inventario_Vehiculo),
+CONSTRAINT FK_InventarioVehiculo_Vehiculo FOREIGN KEY(Id_Vehiculo) REFERENCES Vehiculo(Id_Vehiculo)
+)
+
+SELECT * FROM Inventario_Vehiculo
+SELECT * FROM Vehiculo
+
+INSERT INTO Inventario_Vehiculo VALUES 
+(1, 100, 1),
+(4, 70, 1)
+
+
+SELECT * FROM Factura
+SELECT * FROM Factura_Maestro_Detalle
+--Crear un trigger
+CREATE TRIGGER TRG_Despues_Insert_FacturaMaestroDetalle_Disminuir_Inventario
+ON Factura_Maestro_Detalle
+AFTER INSERT
+AS
+BEGIN
+
+--Restar 1 en la cantidad del inventario, del vehiculo registrado
+UPDATE Inventario_Vehiculo
+SET Cantidad = Cantidad - 1
+FROM inserted i
+WHERE Inventario_Vehiculo.Id_Vehiculo = i.Id_Vehiculo
+
+SELECT 
+'Se ha registrado correctamente la venta del auto y su disminución en el inventario' AS 'Mensaje_Detalle',
+'Success' AS 'Mensaje-Tipo'
+
+END
+
+
+INSERT INTO Factura_Maestro_Detalle VALUES
+(5, 1, 1)
+
